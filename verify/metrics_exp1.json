@@ -1,0 +1,219 @@
+{
+  "data": {
+    "raw_rows": 40000,
+    "raw_labels": 13,
+    "cleaned_rows": 39170,
+    "cleaned_labels": 12,
+    "train": 31336,
+    "test": 7834,
+    "tfidf_features": 10000
+  },
+  "mnb_default": {
+    "accuracy": 0.3171,
+    "macro_f1": 0.1293,
+    "weighted_f1": 0.2616,
+    "per_class_recall": {
+      "anger": 0.0,
+      "boredom": 0.0,
+      "enthusiasm": 0.0,
+      "fun": 0.0028,
+      "happiness": 0.2342,
+      "hate": 0.0,
+      "love": 0.2344,
+      "neutral": 0.5483,
+      "relief": 0.0,
+      "sadness": 0.0968,
+      "surprise": 0.0,
+      "worry": 0.5981
+    }
+  },
+  "mnb_alpha_sweep_acc": {
+    "0.01": 0.3094,
+    "0.1": 0.3141,
+    "0.5": 0.3199,
+    "1.0": 0.3171,
+    "2.0": 0.3135
+  },
+  "mnb_alpha_0.5": {
+    "accuracy": 0.3199,
+    "macro_f1": 0.1394,
+    "weighted_f1": 0.2736,
+    "per_class_recall": {
+      "anger": 0.0,
+      "boredom": 0.0,
+      "enthusiasm": 0.0,
+      "fun": 0.0028,
+      "happiness": 0.2678,
+      "hate": 0.0113,
+      "love": 0.2643,
+      "neutral": 0.5281,
+      "relief": 0.0,
+      "sadness": 0.1636,
+      "surprise": 0.0046,
+      "worry": 0.5538
+    }
+  },
+  "lr_no_smote": {
+    "accuracy": 0.3524,
+    "macro_f1": 0.1746,
+    "weighted_f1": 0.313,
+    "per_class_recall": {
+      "anger": 0.0,
+      "boredom": 0.0,
+      "enthusiasm": 0.0,
+      "fun": 0.0113,
+      "happiness": 0.3503,
+      "hate": 0.083,
+      "love": 0.3607,
+      "neutral": 0.6016,
+      "relief": 0.0098,
+      "sadness": 0.2033,
+      "surprise": 0.0229,
+      "worry": 0.4911
+    }
+  },
+  "lr_smote": {
+    "accuracy": 0.2691,
+    "macro_f1": 0.2038,
+    "weighted_f1": 0.2867,
+    "per_class_recall": {
+      "anger": 0.0,
+      "boredom": 0.2222,
+      "enthusiasm": 0.0724,
+      "fun": 0.2,
+      "happiness": 0.3186,
+      "hate": 0.3208,
+      "love": 0.4128,
+      "neutral": 0.2096,
+      "relief": 0.1836,
+      "sadness": 0.2749,
+      "surprise": 0.1442,
+      "worry": 0.3067
+    },
+    "train_after_smote": 82896
+  },
+  "binary_lr": {
+    "accuracy": 0.7464,
+    "f1": 0.7411,
+    "report": {
+      "Negative": {
+        "precision": 0.7352386934673367,
+        "recall": 0.7682966852641943,
+        "f1-score": 0.7514042689776922,
+        "support": 3047.0
+      },
+      "Positive": {
+        "precision": 0.7584673280875812,
+        "recall": 0.7245098039215686,
+        "f1-score": 0.7410997827177002,
+        "support": 3060.0
+      },
+      "accuracy": 0.7463566399214017,
+      "macro avg": {
+        "precision": 0.7468530107774589,
+        "recall": 0.7464032445928814,
+        "f1-score": 0.7462520258476961,
+        "support": 6107.0
+      },
+      "weighted avg": {
+        "precision": 0.7468777342300595,
+        "recall": 0.7463566399214017,
+        "f1-score": 0.7462410582431949,
+        "support": 6107.0
+      }
+    }
+  },
+  "binary_xgb": {
+    "accuracy": 0.7282,
+    "f1": 0.7117
+  },
+  "binary_top_positive": [
+    [
+      "love",
+      4.6224
+    ],
+    [
+      "happy",
+      4.0042
+    ],
+    [
+      "haha",
+      3.5975
+    ],
+    [
+      "awesome",
+      3.4316
+    ],
+    [
+      "thanks",
+      3.417
+    ],
+    [
+      "great",
+      3.2453
+    ],
+    [
+      "amazing",
+      2.9343
+    ],
+    [
+      "fun",
+      2.9129
+    ],
+    [
+      "good",
+      2.8401
+    ],
+    [
+      "finally",
+      2.8228
+    ]
+  ],
+  "binary_top_negative": [
+    [
+      "sad",
+      -5.0636
+    ],
+    [
+      "hate",
+      -4.1155
+    ],
+    [
+      "sorry",
+      -4.0143
+    ],
+    [
+      "not",
+      -3.3817
+    ],
+    [
+      "sick",
+      -3.2277
+    ],
+    [
+      "bad",
+      -2.9966
+    ],
+    [
+      "sucks",
+      -2.854
+    ],
+    [
+      "poor",
+      -2.7659
+    ],
+    [
+      "miss",
+      -2.6038
+    ],
+    [
+      "hurts",
+      -2.5393
+    ]
+  ],
+  "mention_cleaning": {
+    "tweets_with_at_raw": 19166,
+    "note": "正则 r'@[\\\\w]*' 只删除 '@' 本身，用户名保留"
+  },
+  "elapsed_sec": 30.4
+}

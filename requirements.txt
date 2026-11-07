@@ -1,0 +1,12 @@
+# Python 3.8+
+# 安装： pip install -r requirements.txt -i https://pypi.org/simple
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+imbalanced-learn
+xgboost
+torch
+transformers
+datasets

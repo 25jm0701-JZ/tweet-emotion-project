@@ -1,0 +1,117 @@
+原始数据: 40000 行, sentiment 取值 13 个
+sentiment
+neutral       8638
+worry         8459
+happiness     5209
+sadness       5165
+love          3842
+surprise      2187
+fun           1776
+relief        1526
+hate          1323
+empty          827
+enthusiasm     759
+boredom        179
+anger          110
+清洗前 40000 行 -> 清洗后 39170 行; 清洗后类别数 12
+TF-IDF 维度: (31336, 10000) (训练), (7834, 10000) (测试), 词表 10000
+[MNB default] accuracy=0.3171 macroF1=0.1293 weightedF1=0.2616
+              precision    recall  f1-score   support
+
+       anger       0.00      0.00      0.00        22
+     boredom       0.00      0.00      0.00        36
+  enthusiasm       0.00      0.00      0.00       152
+         fun       0.50      0.00      0.01       355
+   happiness       0.35      0.23      0.28      1042
+        hate       0.00      0.00      0.00       265
+        love       0.53      0.23      0.32       768
+     neutral       0.30      0.55      0.39      1727
+      relief       0.00      0.00      0.00       305
+     sadness       0.36      0.10      0.15      1033
+    surprise       0.00      0.00      0.00       437
+       worry       0.30      0.60      0.40      1692
+
+    accuracy                           0.32      7834
+   macro avg       0.20      0.14      0.13      7834
+weighted avg       0.30      0.32      0.26      7834
+
+alpha=0.01: acc=0.3094
+alpha=0.1: acc=0.3141
+alpha=0.5: acc=0.3199
+alpha=1.0: acc=0.3171
+alpha=2.0: acc=0.3135
+[MNB alpha=0.5] accuracy=0.3199 macroF1=0.1394 weightedF1=0.2736
+              precision    recall  f1-score   support
+
+       anger       0.00      0.00      0.00        22
+     boredom       0.00      0.00      0.00        36
+  enthusiasm       0.00      0.00      0.00       152
+         fun       0.20      0.00      0.01       355
+   happiness       0.32      0.27      0.29      1042
+        hate       0.60      0.01      0.02       265
+        love       0.47      0.26      0.34       768
+     neutral       0.31      0.53      0.39      1727
+      relief       0.00      0.00      0.00       305
+     sadness       0.35      0.16      0.22      1033
+    surprise       0.40      0.00      0.01       437
+       worry       0.31      0.55      0.39      1692
+
+    accuracy                           0.32      7834
+   macro avg       0.25      0.15      0.14      7834
+weighted avg       0.32      0.32      0.27      7834
+
+[LR (no SMOTE)] accuracy=0.3524 macroF1=0.1746 weightedF1=0.3130
+              precision    recall  f1-score   support
+
+       anger       0.00      0.00      0.00        22
+     boredom       0.00      0.00      0.00        36
+  enthusiasm       0.00      0.00      0.00       152
+         fun       0.18      0.01      0.02       355
+   happiness       0.36      0.35      0.36      1042
+        hate       0.56      0.08      0.14       265
+        love       0.52      0.36      0.42       768
+     neutral       0.34      0.60      0.43      1727
+      relief       0.25      0.01      0.02       305
+     sadness       0.37      0.20      0.26      1033
+    surprise       0.20      0.02      0.04       437
+       worry       0.33      0.49      0.39      1692
+
+    accuracy                           0.35      7834
+   macro avg       0.26      0.18      0.17      7834
+weighted avg       0.34      0.35      0.31      7834
+
+SMOTE 后训练集: (82896, 10000)
+[LR + SMOTE] accuracy=0.2691 macroF1=0.2038 weightedF1=0.2867
+              precision    recall  f1-score   support
+
+       anger       0.00      0.00      0.00        22
+     boredom       0.06      0.22      0.09        36
+  enthusiasm       0.02      0.07      0.03       152
+         fun       0.13      0.20      0.16       355
+   happiness       0.35      0.32      0.34      1042
+        hate       0.18      0.32      0.23       265
+        love       0.44      0.41      0.43       768
+     neutral       0.35      0.21      0.26      1727
+      relief       0.11      0.18      0.14       305
+     sadness       0.32      0.27      0.30      1033
+    surprise       0.12      0.14      0.13       437
+       worry       0.40      0.31      0.35      1692
+
+    accuracy                           0.27      7834
+   macro avg       0.21      0.22      0.20      7834
+weighted avg       0.32      0.27      0.29      7834
+
+二分类样本: train=24428, test=6107, 正类占比=0.5011
+[Binary LR] acc=0.7464 f1=0.7411
+              precision    recall  f1-score   support
+
+    Negative       0.74      0.77      0.75      3047
+    Positive       0.76      0.72      0.74      3060
+
+    accuracy                           0.75      6107
+   macro avg       0.75      0.75      0.75      6107
+weighted avg       0.75      0.75      0.75      6107
+
+[Binary XGBoost] acc=0.7282 f1=0.7117
+Top+ : [('love', 4.6224), ('happy', 4.0042), ('haha', 3.5975), ('awesome', 3.4316), ('thanks', 3.417), ('great', 3.2453), ('amazing', 2.9343), ('fun', 2.9129), ('good', 2.8401), ('finally', 2.8228)]
+Top- : [('sad', -5.0636), ('hate', -4.1155), ('sorry', -4.0143), ('not', -3.3817), ('sick', -3.2277), ('bad', -2.9966), ('sucks', -2.854), ('poor', -2.7659), ('miss', -2.6038), ('hurts', -2.5393)]

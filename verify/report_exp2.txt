@@ -1,0 +1,40 @@
+device=cuda, threads=16, quick=False, epochs=3.0
+二分类样本: train=24428, test=6107, 正类占比=0.5011
+tokenizer=RobertaTokenizer
+hidden_size=768
+  embedding 32/24428
+  embedding 1632/24428
+  embedding 3232/24428
+  embedding 4832/24428
+  embedding 6432/24428
+  embedding 8032/24428
+  embedding 9632/24428
+  embedding 11232/24428
+  embedding 12832/24428
+  embedding 14432/24428
+  embedding 16032/24428
+  embedding 17632/24428
+  embedding 19232/24428
+  embedding 20832/24428
+  embedding 22432/24428
+  embedding 24032/24428
+  embedding 32/6107
+  embedding 1632/6107
+  embedding 3232/6107
+  embedding 4832/6107
+特征形状: (24428, 768) / (6107, 768)
+[冻结特征 + LinearSVC] acc=0.7940 f1=0.7961
+[冻结特征 + LR] acc=0.7917 f1=0.7934
+t-SNE 坐标已保存（当前环境无 matplotlib，稍后单独绘图）
+微调耗时 595.6s
+[微调] acc=0.8053 weightedF1=0.8053 AUC=0.8771
+              precision    recall  f1-score   support
+
+    Negative       0.81      0.79      0.80      3047
+    Positive       0.80      0.82      0.81      3060
+
+    accuracy                           0.81      6107
+   macro avg       0.81      0.81      0.81      6107
+weighted avg       0.81      0.81      0.81      6107
+
+混淆矩阵/ROC 数据已保存（稍后单独绘图）

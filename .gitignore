@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 模型权重与缓存（可从 hf-mirror 重新下载，不纳入版本库）
+.hf_cache/
+verify/_model/
+verify/emb_cache.npz
+verify/_trainer_out/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 系统
+.DS_Store
+Thumbs.db
